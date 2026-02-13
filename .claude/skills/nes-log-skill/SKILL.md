@@ -4,10 +4,10 @@ description: Examine the log and retreive the information requested by the user.
 ---
 
 # Purpose
-Find and retreive information requested by the user in the log. 
+Find and retreive information requested by the user in the log provided 
 
 ## Instructions
-- Read the log file
+- Read the log
 - Based on the users request follow the 'Cookbook' to retreive the information the user asked for
 
 ## Workflow
@@ -16,6 +16,46 @@ Find and retreive information requested by the user in the log.
 
 
 ## Cookbook
+
+### Get barcode
+IF: The user requests to retreive the barcodes read by the instrument
+THEN: Read and execute @.claude/skills/nes-log-skill/prompts/get-barcode.md
+EXAMPLES:
+    - "get barcodes from <log>"
+    - "find barcodes"
+    - "list barcodes"  
+
+
+### Get cartridge id
+IF: The user requests to retrieve the cartridge IDs recorded by the instrument
+THEN: Read and execute @.claude/skills/nes-log-skill/prompts/get-cartridge-id.md
+EXAMPLES:
+    - "get cartridge ids from <log>"
+    - "find cartridge id"
+    - "list cartridge ids"  
+
+
+### Get self check
+IF: The user requests to retrieve self check events or details from the log
+THEN: Read and execute @.claude/skills/nes-log-skill/prompts/get-self-check.md
+EXAMPLES:
+    - "get self check from <log>"
+    - "find self checks"
+    - "list self check results"  
+
+
+### Get run time
+IF: The user requests to retrieve the run times recorded by the instrument
+THEN: Read and execute @.claude/skills/nes-log-skill/prompts/get-run-time.md
+EXAMPLES:
+    - "get run time from <log>"
+    - "find run times"
+    - "list run times"  
+
+
+
+
+
 
 
 
